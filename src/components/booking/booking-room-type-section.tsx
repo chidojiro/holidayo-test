@@ -1,40 +1,22 @@
-'use client';
-
-import { useRouter, useSearchParams } from 'next/navigation';
+import { ROOM_TYPE_SEARCH_PARAM_KEY } from '@/constants/booking';
 import BookingRoomTypeOption from './booking-room-type-option';
-import { useLayoutEffect } from 'react';
+import { kebabCase } from 'lodash-es';
 
 export type BookingRoomTypeSectionProps = {
   roomTypes: string[];
+  searchParams: Record<string, string>;
 };
 
-const ROOM_TYPE_SEARCH_PARAM_KEY = 'room';
-
-export default function BookingRoomTypeSection({ roomTypes }: BookingRoomTypeSectionProps) {
-  const router = useRouter();
-
-  const searchParams = useSearchParams();
-
+export default function BookingRoomTypeSection({
+  roomTypes,
+  searchParams,
+}: BookingRoomTypeSectionProps) {
   const roomTypeOptions = roomTypes.map((roomType) => ({
     label: roomType,
-    value: roomType.replace(' ', '-').toLowerCase(),
+    value: kebabCase(roomType),
   }));
 
-  const selectedRoomType = searchParams.get(ROOM_TYPE_SEARCH_PARAM_KEY) || roomTypeOptions[0].value;
-
-  useLayoutEffect(() => {
-    if (!searchParams.has(ROOM_TYPE_SEARCH_PARAM_KEY) && roomTypeOptions.length) {
-      const newSearchParams = new URLSearchParams(searchParams);
-      newSearchParams.set(ROOM_TYPE_SEARCH_PARAM_KEY, roomTypeOptions[0].value);
-      router.push('?' + newSearchParams);
-    }
-  }, [roomTypeOptions, router, searchParams]);
-
-  const handleRoomTypeChange = (roomType: string) => {
-    const newSearchParams = new URLSearchParams(searchParams);
-    newSearchParams.set(ROOM_TYPE_SEARCH_PARAM_KEY, roomType);
-    router.push('?' + newSearchParams);
-  };
+  const selectedRoomType = searchParams[ROOM_TYPE_SEARCH_PARAM_KEY] || roomTypeOptions[0].value;
 
   return (
     <div className='py-5'>
@@ -43,9 +25,9 @@ export default function BookingRoomTypeSection({ roomTypes }: BookingRoomTypeSec
         {roomTypeOptions.map((option) => (
           <BookingRoomTypeOption
             key={option.value}
-            roomType={option.label}
+            roomTypeOption={option}
             priceDifference={100}
-            onClick={() => handleRoomTypeChange(option.value)}
+            searchParams={searchParams}
             selected={selectedRoomType === option.value}
           />
         ))}

@@ -1,3 +1,7 @@
+'use client';
+
+import { noop } from 'lodash-es';
+
 export type RadioProps = {
   value?: string;
   checked?: boolean;
@@ -11,7 +15,7 @@ export default function Radio({ value, checked, onChange }: RadioProps) {
         type='radio'
         value={value}
         checked={checked}
-        onChange={onChange}
+        onChange={onChange || noop}
         className='peer w-0 h-0 opacity-0 overflow-hidden'
       />
       <div className='w-full h-full rounded-full bg-cyan-400 opacity-0 peer-checked:opacity-100 transition-opacity'></div>

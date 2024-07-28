@@ -1,40 +1,22 @@
-'use client';
-
-import { useRouter, useSearchParams } from 'next/navigation';
+import { MEAL_TYPE_SEARCH_PARAM_KEY } from '@/constants/booking';
+import { kebabCase } from 'lodash-es';
 import BookingMealTypeOption from './booking-meal-type-option';
-import { useLayoutEffect } from 'react';
 
 export type BookingMealTypeSectionProps = {
   mealTypes: string[];
+  searchParams: Record<string, string>;
 };
 
-const MEAL_TYPE_SEARCH_PARAM_KEY = 'meal';
-
-export default function BookingMealTypeSection({ mealTypes }: BookingMealTypeSectionProps) {
-  const router = useRouter();
-
-  const searchParams = useSearchParams();
-
+export default function BookingMealTypeSection({
+  mealTypes,
+  searchParams,
+}: BookingMealTypeSectionProps) {
   const mealTypeOptions = mealTypes.map((mealType) => ({
     label: mealType,
-    value: mealType.replace(' ', '-').toLowerCase(),
+    value: kebabCase(mealType),
   }));
 
-  const selectedMealType = searchParams.get(MEAL_TYPE_SEARCH_PARAM_KEY) || mealTypeOptions[0].value;
-
-  useLayoutEffect(() => {
-    if (!searchParams.has(MEAL_TYPE_SEARCH_PARAM_KEY) && mealTypeOptions.length) {
-      const newSearchParams = new URLSearchParams(searchParams);
-      newSearchParams.set(MEAL_TYPE_SEARCH_PARAM_KEY, mealTypeOptions[0].value);
-      router.push('?' + newSearchParams);
-    }
-  }, [mealTypeOptions, router, searchParams]);
-
-  const handleMealTypeChange = (mealType: string) => {
-    const newSearchParams = new URLSearchParams(searchParams);
-    newSearchParams.set(MEAL_TYPE_SEARCH_PARAM_KEY, mealType);
-    router.push('?' + newSearchParams);
-  };
+  const selectedMealType = searchParams[MEAL_TYPE_SEARCH_PARAM_KEY] || mealTypeOptions[0].value;
 
   return (
     <div className='py-5'>
@@ -43,9 +25,9 @@ export default function BookingMealTypeSection({ mealTypes }: BookingMealTypeSec
         {mealTypeOptions.map((option) => (
           <BookingMealTypeOption
             key={option.value}
-            mealType={option.label}
+            mealTypeOption={option}
             priceDifference={100}
-            onClick={() => handleMealTypeChange(option.value)}
+            searchParams={searchParams}
             selected={selectedMealType === option.value}
           />
         ))}

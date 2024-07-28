@@ -1,25 +1,31 @@
+import { ROOM_TYPE_SEARCH_PARAM_KEY } from '@/constants/booking';
+import { Option } from '@/types/form';
 import clsx from 'clsx';
 import Image from 'next/image';
-import Radio from '../core/radio';
+import Link from 'next/link';
 import Price from '../core/price';
+import Radio from '../core/radio';
 
 export type BookingRoomTypeOptionProps = {
-  roomType: string;
+  roomTypeOption: Option;
   priceDifference: number;
   selected: boolean;
-  onClick: () => void;
+  searchParams: Record<string, string>;
 };
 
 export default function BookingRoomTypeOption({
   selected,
-  roomType,
+  roomTypeOption,
   priceDifference,
-  onClick,
+  searchParams,
 }: BookingRoomTypeOptionProps) {
+  const newSearchParams = new URLSearchParams(searchParams);
+
+  newSearchParams.set(ROOM_TYPE_SEARCH_PARAM_KEY, roomTypeOption.value);
+
   return (
-    <button
-      type='button'
-      onClick={onClick}
+    <Link
+      href={'?' + newSearchParams}
       className={clsx(
         'flex justify-between items-center w-full rounded-xl p-2 pr-7 min-h-28 bg-white text-left border',
         selected ? 'border-cyan-400' : 'border-transparent',
@@ -37,7 +43,7 @@ export default function BookingRoomTypeOption({
           />
         </div>
         <div className='max-w-[420px]'>
-          <h4 className='font-semibold text-lg'>{roomType}</h4>
+          <h4 className='font-semibold text-lg'>{roomTypeOption.label}</h4>
           <p className='mt-1 text-xs'>
             v prízemných budovách • situované v záhrade • s výhľadom do záhrady alebo na bazén •
             kúpeľňa so sprchou •{' '}
@@ -51,6 +57,6 @@ export default function BookingRoomTypeOption({
         <Price price={priceDifference} variant='increase' />
         <Radio checked={selected} />
       </div>
-    </button>
+    </Link>
   );
 }
