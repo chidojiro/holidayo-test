@@ -8,8 +8,23 @@ import {
   IconStay,
   IconTransport,
 } from '@/components/icons';
+import Link from 'next/link';
 
-export default function BookingMetadataSection() {
+export type BookingMetadataSectionProps = {
+  searchParams: Record<string, string>;
+};
+
+export default function BookingMetadataSection({ searchParams }: BookingMetadataSectionProps) {
+  const isCollapsed = searchParams['collapsed'] === 'true';
+
+  const newSearchParams = new URLSearchParams(searchParams);
+
+  if (isCollapsed) {
+    newSearchParams.delete('collapsed');
+  } else {
+    newSearchParams.set('collapsed', String(!isCollapsed));
+  }
+
   return (
     <>
       <h2 className='text-xl font-medium'>7 nights / Tuesday - Tuesday</h2>
@@ -24,10 +39,21 @@ export default function BookingMetadataSection() {
           <p className='whitespace-break-spaces text-gray-500 text-xs'>
             From <Price price={1730} /> / per person
           </p>
-          <Button className='mt-1'>
-            Show less
-            <IconChevronUp />
-          </Button>
+          <Link href={'?' + newSearchParams}>
+            <Button className='mt-1' variant={isCollapsed ? 'secondary' : 'primary'}>
+              {isCollapsed ? (
+                <>
+                  Show more
+                  <IconChevronUp className='rotate-180' />
+                </>
+              ) : (
+                <>
+                  Show less
+                  <IconChevronUp />
+                </>
+              )}
+            </Button>
+          </Link>
         </div>
       </div>
     </>

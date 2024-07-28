@@ -17,10 +17,10 @@ export default function Button({
     <button
       className={clsx(
         {
-          'bg-cyan-400 hover:bg-cyan-500 text-white': variant === 'primary',
-          'bg-gray-500 text-black': variant === 'secondary',
+          'bg-cyan-400 hover:bg-cyan-500 text-white border-transparent': variant === 'primary',
+          'bg-white text-cyan-400 border border-cyan-400': variant === 'secondary',
         },
-        'h-9 flex items-center justify-center rounded-full gap-1.5 px-4 transition-colors',
+        'h-9 flex items-center justify-center rounded-full gap-1.5 px-4 transition-colors border',
         className,
       )}
       type={type}

@@ -3,8 +3,11 @@ import BookingMealTypeSection from '@/components/booking/booking-meal-type-secti
 import BookingMetadataSection from '@/components/booking/booking-metadata-section';
 import BookingRoomTypeSection from '@/components/booking/booking-room-type-section';
 import BookingSummary from '@/components/booking/booking-summary';
+import clsx from 'clsx';
 
 export default function Page({ searchParams }: { searchParams: Record<string, string> }) {
+  const isCollapsed = searchParams['collapsed'] === 'true';
+
   return (
     <div className='flex gap-12'>
       <div className='rounded-2xl border border-gray-100 p-8 flex-1'>
@@ -15,15 +18,17 @@ export default function Page({ searchParams }: { searchParams: Record<string, st
             </div>
           </div>
 
-          <BookingMetadataSection />
+          <BookingMetadataSection searchParams={searchParams} />
 
-          <div className='space-y-2.5 mt-5'>
-            <BookingDescriptionSection />
+          {!isCollapsed && (
+            <div className='space-y-2.5 mt-5'>
+              <BookingDescriptionSection />
 
-            <BookingRoomTypeSection roomTypes={['x y', 'a b']} searchParams={searchParams} />
+              <BookingRoomTypeSection roomTypes={['x y', 'a b']} searchParams={searchParams} />
 
-            <BookingMealTypeSection mealTypes={['x y', 'a b']} searchParams={searchParams} />
-          </div>
+              <BookingMealTypeSection mealTypes={['x y', 'a b']} searchParams={searchParams} />
+            </div>
+          )}
         </div>
       </div>
 
