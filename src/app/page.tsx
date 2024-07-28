@@ -9,15 +9,14 @@ export default function Page({ searchParams }: { searchParams: Record<string, st
   const isCollapsed = searchParams['collapsed'] === 'true';
 
   return (
-    <div className='flex gap-12'>
-      <div className='rounded-2xl border border-gray-100 p-8 flex-1'>
-        <div className='relative rounded-xl border border-cyan-400 bg-cyan-25 pt-6 pb-8 px-5'>
-          <div className='flex gap-2 absolute top-2.5 right-5'>
-            <div className='rounded-full bg-gray-100 h-6 px-3 w-fit text-sm flex items-center text-gray-600'>
-              Hydrotour
-            </div>
-          </div>
-
+    <div className='flex gap-5 lg:gap-12 flex-col lg:flex-row'>
+      <div className={clsx('rounded-2xl flex-1', 'lg:border lg:border-gray-100 lg:p-8')}>
+        <div
+          className={clsx(
+            'relative rounded-xl',
+            'lg:border lg:border-cyan-400 lg:bg-cyan-25 lg:pt-6 lg:pb-8 lg:px-5',
+          )}
+        >
           <BookingMetadataSection searchParams={searchParams} />
 
           {!isCollapsed && (

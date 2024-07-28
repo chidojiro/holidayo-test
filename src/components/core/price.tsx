@@ -20,7 +20,7 @@ export default function Price({ price, variant, className }: PriceProps) {
   return (
     <span
       className={clsx(
-        'text-xl font-medium',
+        'text-xl font-medium whitespace-nowrap',
         {
           'text-cyan-400': !variant || variant === 'increase',
           'text-red-500': variant === 'decrease',

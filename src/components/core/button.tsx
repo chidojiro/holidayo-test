@@ -20,7 +20,7 @@ export default function Button({
           'bg-cyan-400 hover:bg-cyan-500 text-white border-transparent': variant === 'primary',
           'bg-white text-cyan-400 border border-cyan-400': variant === 'secondary',
         },
-        'h-9 flex items-center justify-center rounded-full gap-1.5 px-4 transition-colors border',
+        'h-9 flex items-center justify-center rounded-full gap-1.5 px-4 transition-colors border whitespace-nowrap',
         className,
       )}
       type={type}

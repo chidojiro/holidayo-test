@@ -17,10 +17,10 @@ export type BookingSummaryProps = {
 
 export default function BookingSummary({}: BookingSummaryProps) {
   return (
-    <div className='rounded-3xl py-8 px-10 border border-gray-200 max-w-[444px] flex-1 shadow-sm h-fit'>
-      <h3 className='text-center text-3xl font-medium'>Booking summary</h3>
+    <div className='rounded-3xl py-8 px-10 border flex-1 shadow-sm h-fit border-cyan-400 bg-cyan-25 lg:bg-white lg:border-gray-200 lg:max-w-[444px]'>
+      <h3 className='text-center text-xl lg:text-3xl font-medium'>Booking summary</h3>
 
-      <div className='rounded-[20px] border border-gray-200 mt-8'>
+      <div className='rounded-[20px] border border-gray-200 mt-8 bg-white'>
         <div className='h-20 px-5 grid grid-cols-2 gap-2 border-b border-gray-200'>
           <BookingSummaryItem
             icon={IconCalendar24}

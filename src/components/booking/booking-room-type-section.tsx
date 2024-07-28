@@ -20,7 +20,7 @@ export default function BookingRoomTypeSection({
 
   return (
     <div className='py-5'>
-      <h3 className='text-2xl font-medium'>Room type</h3>
+      <h3 className='text-lg lg:text-2xl font-medium'>Room type</h3>
       <div className='space-y-2.5 mt-2.5'>
         {roomTypeOptions.map((option) => (
           <BookingRoomTypeOption

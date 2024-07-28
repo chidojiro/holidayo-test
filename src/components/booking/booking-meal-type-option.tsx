@@ -27,12 +27,12 @@ export default function BookingMealTypeOption({
     <Link
       href={'?' + newSearchParams}
       className={clsx(
-        'flex justify-between items-center w-full rounded-xl p-2 pl-9 pr-7 min-h-28 bg-white text-left border',
-        selected ? 'border-cyan-400' : 'border-transparent',
+        'flex gap-5 justify-between items-center w-full rounded-xl p-2 pl-9 pr-7 min-h-20 bg-white text-left border',
+        selected ? 'border-cyan-400' : 'border-gray-300',
       )}
     >
       <div className='flex items-center gap-10'>
-        <div className='w-8 h-8 flex items-center justify-center'>
+        <div className='w-8 h-8 flex items-center justify-center shrink-0'>
           <IconMeals className='text-cyan-400 scale-150' />
         </div>
         <div className='max-w-[420px]'>

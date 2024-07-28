@@ -20,7 +20,7 @@ export default function BookingMealTypeSection({
 
   return (
     <div className='py-5'>
-      <h3 className='text-2xl font-medium'>Meal type</h3>
+      <h3 className='text-lg lg:text-2xl font-medium'>Meal type</h3>
       <div className='space-y-2.5 mt-2.5'>
         {mealTypeOptions.map((option) => (
           <BookingMealTypeOption

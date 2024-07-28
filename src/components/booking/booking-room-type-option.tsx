@@ -27,12 +27,12 @@ export default function BookingRoomTypeOption({
     <Link
       href={'?' + newSearchParams}
       className={clsx(
-        'flex justify-between items-center w-full rounded-xl p-2 pr-7 min-h-28 bg-white text-left border',
-        selected ? 'border-cyan-400' : 'border-transparent',
+        'flex gap-5 justify-between items-center w-full rounded-xl p-2 pr-7 min-h-28 bg-white text-left border',
+        selected ? 'border-cyan-400' : 'border-gray-300',
       )}
     >
       <div className='flex items-center gap-7'>
-        <div className='relative w-27 rounded-md h-23 overflow-hidden'>
+        <div className='relative w-27 rounded-md h-23 overflow-hidden shrink-0'>
           <Image
             src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Endicott_College_Stoneridge_Hall_empty_dorm_room.jpg/1920px-Endicott_College_Stoneridge_Hall_empty_dorm_room.jpg'
             alt=''
@@ -44,13 +44,16 @@ export default function BookingRoomTypeOption({
         </div>
         <div className='max-w-[420px]'>
           <h4 className='font-semibold text-lg'>{roomTypeOption.label}</h4>
-          <p className='mt-1 text-xs'>
+          <p className='mt-1 text-xs hidden xl:block'>
             v prízemných budovách • situované v záhrade • s výhľadom do záhrady alebo na bazén •
             kúpeľňa so sprchou •{' '}
             <button type='button' className='text-cyan-400 font-semibold underline'>
               Show more
             </button>
           </p>
+          <button type='button' className='mt-1 text-left text-cyan-400 text-[10px] md:text-sm'>
+            Room description
+          </button>
         </div>
       </div>
       <div className='flex items-center gap-7'>

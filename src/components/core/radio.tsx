@@ -10,7 +10,7 @@ export type RadioProps = {
 
 export default function Radio({ value, checked, onChange }: RadioProps) {
   return (
-    <label className='rounded-full w-6 h-6 flex items-center justify-center border border-gray-300 p-1 cursor-pointer'>
+    <label className='rounded-full w-6 h-6 flex items-center justify-center border border-gray-300 p-1 cursor-pointer shrink-0'>
       <input
         type='radio'
         value={value}
