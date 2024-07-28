@@ -4,13 +4,13 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import BookingRoomTypeOption from './booking-room-type-option';
 import { useLayoutEffect } from 'react';
 
-export type RoomTypeSectionProps = {
+export type BookingRoomTypeSectionProps = {
   roomTypes: string[];
 };
 
 const ROOM_TYPE_SEARCH_PARAM_KEY = 'room';
 
-export default function RoomTypeSection({ roomTypes }: RoomTypeSectionProps) {
+export default function BookingRoomTypeSection({ roomTypes }: BookingRoomTypeSectionProps) {
   const router = useRouter();
 
   const searchParams = useSearchParams();

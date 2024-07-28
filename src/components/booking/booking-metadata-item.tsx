@@ -17,7 +17,7 @@ export default function BookingMetadataItem({
   return (
     <div className={clsx('flex items-center gap-2.5', className)}>
       <div className='rounded-full w-7 h-7 flex items-center justify-center bg-cyan-100'>
-        <Icon />
+        <Icon className='text-cyan-800' />
       </div>
 
       <p className='text-sm'>

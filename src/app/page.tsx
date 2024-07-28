@@ -1,6 +1,6 @@
+import BookingMealTypeSection from '@/components/booking/booking-meal-type-section';
 import BookingMetadataItem from '@/components/booking/booking-metadata-item';
-import BookingRoomTypeOption from '@/components/booking/booking-room-type-option';
-import RoomTypeSection from '@/components/booking/room-type-section';
+import BookingRoomTypeSection from '@/components/booking/booking-room-type-section';
 import Button from '@/components/core/button';
 import Price from '@/components/core/price';
 import ShowMoreParagraph from '@/components/core/show-more-paragraph';
@@ -50,7 +50,9 @@ export default function Home() {
               </ShowMoreParagraph>
             </div>
 
-            <RoomTypeSection roomTypes={['x y', 'a b']} />
+            <BookingRoomTypeSection roomTypes={['x y', 'a b']} />
+
+            <BookingMealTypeSection mealTypes={['x y', 'a b']} />
           </div>
         </div>
       </div>
