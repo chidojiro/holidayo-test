@@ -1,6 +1,7 @@
 import BookingMealTypeSection from '@/components/booking/booking-meal-type-section';
 import BookingMetadataItem from '@/components/booking/booking-metadata-item';
 import BookingRoomTypeSection from '@/components/booking/booking-room-type-section';
+import BookingSummary from '@/components/booking/booking-summary';
 import Button from '@/components/core/button';
 import Price from '@/components/core/price';
 import ShowMoreParagraph from '@/components/core/show-more-paragraph';
@@ -56,6 +57,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <BookingSummary />
     </div>
   );
 }

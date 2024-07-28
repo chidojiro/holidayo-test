@@ -3,11 +3,12 @@ import clsx from 'clsx';
 export type PriceProps = {
   price: number;
   variant?: 'increase' | 'decrease' | 'discount';
+  className?: string;
 };
 
-export default function Price({ price, variant }: PriceProps) {
-  const renderVariant = () => {
-    if (!variant || variant === 'discount') return null;
+export default function Price({ price, variant, className }: PriceProps) {
+  const renderPrefix = () => {
+    if (!variant || variant === 'discount' || !price) return null;
 
     if (variant === 'increase') {
       return <span>+ </span>;
@@ -18,13 +19,17 @@ export default function Price({ price, variant }: PriceProps) {
 
   return (
     <span
-      className={clsx('text-xl font-medium', {
-        'text-cyan-400': !variant || variant === 'increase',
-        'text-red-500': variant === 'decrease',
-        'text-gray-400 line-through': variant === 'discount',
-      })}
+      className={clsx(
+        'text-xl font-medium',
+        {
+          'text-cyan-400': !variant || variant === 'increase',
+          'text-red-500': variant === 'decrease',
+          'text-gray-400 line-through': variant === 'discount',
+        },
+        className,
+      )}
     >
-      {renderVariant()}
+      {renderPrefix()}
       {Intl.NumberFormat('de-DE', {
         style: 'currency',
         currency: 'EUR',

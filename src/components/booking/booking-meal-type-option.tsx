@@ -21,7 +21,7 @@ export default function BookingMealTypeOption({
       type='button'
       onClick={onClick}
       className={clsx(
-        'flex justify-between items-center w-full rounded-xl p-2 pr-7 min-h-28 bg-white text-left border',
+        'flex justify-between items-center w-full rounded-xl p-2 pl-9 pr-7 min-h-28 bg-white text-left border',
         selected ? 'border-cyan-400' : 'border-transparent',
       )}
     >
