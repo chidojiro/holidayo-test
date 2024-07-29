@@ -9,7 +9,7 @@ export default function BookingSummaryItem({ icon: Icon, label }: BookingSummary
   return (
     <div className='flex items-center gap-3 text-sm font-medium'>
       <Icon className='text-gray-300 shrink-0' />
-      <p>{label}</p>
+      <p className='line-clamp-2 capitalize'>{label}</p>
     </div>
   );
 }

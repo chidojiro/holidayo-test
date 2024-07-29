@@ -1,13 +1,13 @@
 import { MEAL_TYPE_SEARCH_PARAM_KEY } from '@/constants/booking';
 import clsx from 'clsx';
+import { kebabCase } from 'lodash-es';
 import Link from 'next/link';
 import Price from '../core/price';
 import Radio from '../core/radio';
-import { IconMeals } from '../icons';
-import { Option } from '@/types/form';
+import { IconMeals24 } from '../icons';
 
 export type BookingMealTypeOptionProps = {
-  mealTypeOption: Option;
+  mealType: string;
   priceDifference: number;
   selected: boolean;
   searchParams: Record<string, string>;
@@ -15,16 +15,17 @@ export type BookingMealTypeOptionProps = {
 
 export default function BookingMealTypeOption({
   selected,
-  mealTypeOption,
+  mealType,
   priceDifference,
   searchParams,
 }: BookingMealTypeOptionProps) {
   const newSearchParams = new URLSearchParams(searchParams);
 
-  newSearchParams.set(MEAL_TYPE_SEARCH_PARAM_KEY, mealTypeOption.value);
+  newSearchParams.set(MEAL_TYPE_SEARCH_PARAM_KEY, kebabCase(mealType));
 
   return (
     <Link
+      scroll={false}
       href={'?' + newSearchParams}
       className={clsx(
         'flex gap-5 justify-between items-center w-full rounded-xl p-2 pl-9 pr-7 min-h-20 bg-white text-left border',
@@ -33,10 +34,10 @@ export default function BookingMealTypeOption({
     >
       <div className='flex items-center gap-10'>
         <div className='w-8 h-8 flex items-center justify-center shrink-0'>
-          <IconMeals className='text-cyan-400 scale-150' />
+          <IconMeals24 className='text-cyan-400 scale-150' />
         </div>
         <div className='max-w-[420px]'>
-          <h4 className='font-semibold text-lg'>{mealTypeOption.label}</h4>
+          <h4 className='font-semibold text-lg'>{mealType}</h4>
         </div>
       </div>
       <div className='flex items-center gap-7'>

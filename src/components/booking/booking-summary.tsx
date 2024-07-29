@@ -1,3 +1,4 @@
+import { Booking } from '@/types/booking';
 import Button from '../core/button';
 import Price from '../core/price';
 import {
@@ -10,14 +11,35 @@ import {
   IconUsers24,
 } from '../icons';
 import BookingSummaryItem from './booking-summary-item';
+import dayjs from 'dayjs';
 
 export type BookingSummaryProps = {
-  //
+  booking: Booking;
+  selectedRoomType: string;
+  selectedMealType: string;
 };
 
-export default function BookingSummary({}: BookingSummaryProps) {
+export default function BookingSummary({
+  booking,
+  selectedRoomType,
+  selectedMealType,
+}: BookingSummaryProps) {
+  const startDate = new Date(booking.products[0].startDate);
+  const endDate = new Date(booking.products[0].endDate);
+
+  const nights = dayjs(endDate).diff(dayjs(startDate), 'day');
+
+  const departureLocation = booking.products[0].transport.departureLocation;
+
+  const selectedProduct = booking.products.find(
+    (product) => product.roomType === selectedRoomType && product.catering === selectedMealType,
+  )!;
+
+  const perAdultAddon = selectedProduct.addons.find((addon) => addon.id === 'per-adult');
+  const perChildAddon = selectedProduct.addons.find((addon) => addon.id === 'per-child');
+
   return (
-    <div className='rounded-3xl py-8 px-10 border flex-1 shadow-sm h-fit border-cyan-400 bg-cyan-25 lg:bg-white lg:border-gray-200 lg:max-w-[444px]'>
+    <div className='rounded-3xl py-8 px-10 border flex-1 shadow-sm h-fit border-cyan-400 bg-cyan-25 lg:bg-white lg:border-gray-200 lg:max-w-[400px] xl:max-w-[444px]'>
       <h3 className='text-center text-xl lg:text-3xl font-medium'>Booking summary</h3>
 
       <div className='rounded-[20px] border border-gray-200 mt-8 bg-white'>
@@ -26,21 +48,21 @@ export default function BookingSummary({}: BookingSummaryProps) {
             icon={IconCalendar24}
             label={
               <>
-                <span>13.09.2023</span>
+                <span>{dayjs(startDate).format('DD.MM.YYYY')}</span>
                 <br />
-                <span>27.09.2023</span>
+                <span>{dayjs(endDate).format('DD.MM.YYYY')}</span>
               </>
             }
           />
-          <BookingSummaryItem icon={IconMoon24} label='14 nights' />
+          <BookingSummaryItem icon={IconMoon24} label={`${nights} nights`} />
         </div>
         <div className='h-20 px-5 grid grid-cols-2 gap-2 border-b border-gray-200'>
           <BookingSummaryItem icon={IconUsers24} label='2 dospelí, 1 dieťa' />
-          <BookingSummaryItem icon={IconStay24} label='2+0 Premium izba Club Rotana' />
+          <BookingSummaryItem icon={IconStay24} label={selectedRoomType} />
         </div>
         <div className='h-20 px-5 grid grid-cols-2 gap-2'>
-          <BookingSummaryItem icon={IconTransport24} label='Bratislava' />
-          <BookingSummaryItem icon={IconMeals24} label='All Inclusive' />
+          <BookingSummaryItem icon={IconTransport24} label={departureLocation} />
+          <BookingSummaryItem icon={IconMeals24} label={selectedMealType} />
         </div>
       </div>
 
@@ -50,25 +72,42 @@ export default function BookingSummary({}: BookingSummaryProps) {
           style={{ filter: 'drop-shadow(0px 4px 4px #00000040)' }}
         >
           <p>Cost per adult</p>
-          <Price price={1620} className='!text-gray-500 !text-base' />
+          <Price
+            price={
+              perAdultAddon ? Math.round(Number(perAdultAddon.price) / perAdultAddon.count) : 0
+            }
+            className='!text-gray-500 !text-base'
+          />
         </div>
         <div
           className='flex justify-between text-gray-500'
           style={{ filter: 'drop-shadow(0px 4px 4px #00000040)' }}
         >
           <p>Cost per child under 5 years</p>
-          <Price price={800} className='!text-gray-500 !text-base' />
+          <Price
+            price={
+              perChildAddon ? Math.round(Number(perChildAddon.price) / perChildAddon.count) : 0
+            }
+            className='!text-gray-500 !text-base'
+          />
         </div>
         <div className='flex justify-between text-red-500'>
           <p>Discount</p>
-          <Price price={800} variant='decrease' className='!text-base' />
+          <Price
+            price={
+              Math.round(Number(selectedProduct.priceFrom) / 1000) -
+              Number(selectedProduct.discountedPriceFrom)
+            }
+            variant='decrease'
+            className='!text-base'
+          />
         </div>
       </div>
 
       <div className='mt-3 flex justify-between'>
         <p className='font-medium'>Cost for all passangers</p>
         <div className='flex gap-2.5'>
-          <Price price={800} className='!text-base' />
+          <Price price={Number(selectedProduct.discountedPriceFrom)} className='!text-base' />
         </div>
       </div>
 

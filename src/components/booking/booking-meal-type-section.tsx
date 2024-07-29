@@ -1,34 +1,45 @@
-import { MEAL_TYPE_SEARCH_PARAM_KEY } from '@/constants/booking';
-import { kebabCase } from 'lodash-es';
+import { Booking } from '@/types/booking';
 import BookingMealTypeOption from './booking-meal-type-option';
 
 export type BookingMealTypeSectionProps = {
-  mealTypes: string[];
   searchParams: Record<string, string>;
+  booking: Booking;
+  selectedRoomType: string;
+  selectedMealType: string;
 };
 
 export default function BookingMealTypeSection({
-  mealTypes,
   searchParams,
+  booking,
+  selectedRoomType,
+  selectedMealType,
 }: BookingMealTypeSectionProps) {
-  const mealTypeOptions = mealTypes.map((mealType) => ({
-    label: mealType,
-    value: kebabCase(mealType),
-  }));
+  const mealTypes = booking.distinctCatering;
 
-  const selectedMealType = searchParams[MEAL_TYPE_SEARCH_PARAM_KEY] || mealTypeOptions[0].value;
+  const baseRoomTypeDifferences = Object.entries(booking.differences)
+    .filter(([key]) => key.startsWith(selectedRoomType))
+    .map(
+      ([key, value]) =>
+        [key.replace(selectedRoomType + '-', ''), parseInt(value)] as [string, number],
+    );
+
+  const minDifference = Math.min(...baseRoomTypeDifferences.map(([, value]) => value));
+
+  const roomTypeDifferences = Object.fromEntries(
+    baseRoomTypeDifferences.map(([key, value]) => [key, value - minDifference]),
+  );
 
   return (
     <div className='py-5'>
       <h3 className='text-lg lg:text-2xl font-medium'>Meal type</h3>
       <div className='space-y-2.5 mt-2.5'>
-        {mealTypeOptions.map((option) => (
+        {mealTypes.map((meanType) => (
           <BookingMealTypeOption
-            key={option.value}
-            mealTypeOption={option}
-            priceDifference={100}
+            key={meanType}
+            mealType={meanType}
+            priceDifference={roomTypeDifferences[meanType]}
             searchParams={searchParams}
-            selected={selectedMealType === option.value}
+            selected={selectedMealType === meanType}
           />
         ))}
       </div>

@@ -1,34 +1,45 @@
-import { ROOM_TYPE_SEARCH_PARAM_KEY } from '@/constants/booking';
+import { MEAL_TYPE_SEARCH_PARAM_KEY } from '@/constants/booking';
+import { Booking } from '@/types/booking';
+import { kebabCase, uniq } from 'lodash-es';
 import BookingRoomTypeOption from './booking-room-type-option';
-import { kebabCase } from 'lodash-es';
 
 export type BookingRoomTypeSectionProps = {
-  roomTypes: string[];
   searchParams: Record<string, string>;
+  booking: Booking;
+  selectedRoomType: string;
+  selectedMealType: string;
 };
 
 export default function BookingRoomTypeSection({
-  roomTypes,
   searchParams,
+  booking,
+  selectedRoomType,
+  selectedMealType,
 }: BookingRoomTypeSectionProps) {
-  const roomTypeOptions = roomTypes.map((roomType) => ({
-    label: roomType,
-    value: kebabCase(roomType),
-  }));
+  const baseRoomTypeDifferences = Object.entries(booking.differences)
+    .filter(([key]) => key.endsWith(selectedMealType))
+    .map(
+      ([key, value]) =>
+        [key.replace('-' + selectedMealType, ''), parseInt(value)] as [string, number],
+    );
 
-  const selectedRoomType = searchParams[ROOM_TYPE_SEARCH_PARAM_KEY] || roomTypeOptions[0].value;
+  const minDifference = Math.min(...baseRoomTypeDifferences.map(([, value]) => value));
+
+  const roomTypeDifferences = Object.fromEntries(
+    baseRoomTypeDifferences.map(([key, value]) => [key, value - minDifference]),
+  );
 
   return (
     <div className='py-5'>
       <h3 className='text-lg lg:text-2xl font-medium'>Room type</h3>
       <div className='space-y-2.5 mt-2.5'>
-        {roomTypeOptions.map((option) => (
+        {booking.distinctRoomTypes.map((roomType) => (
           <BookingRoomTypeOption
-            key={option.value}
-            roomTypeOption={option}
-            priceDifference={100}
+            key={roomType}
+            roomType={roomType}
+            priceDifference={roomTypeDifferences[roomType]}
             searchParams={searchParams}
-            selected={selectedRoomType === option.value}
+            selected={selectedRoomType === roomType}
           />
         ))}
       </div>

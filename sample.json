@@ -1,0 +1,346 @@
+{
+  "partner": "Kartago Tours",
+  "description": "<p>Hotel sa nachádza na jednom z najkrajších pobreží Červeného mora, v pokojnej oblasti El Quseir pri piesočnatej pláži, ktorá prechádza do pozoruhodných koralových útesov lákajúcich k pozorovaniu podmorského života. Hotelovému areálu dominuje honosná hotelová hala, postavená z ručne vyrobených tehál. Tento obľúbený rezort je rajom pre milovníkov vodných športov a potápania. V areáli sa nachádza rozľahlý aquapark s niekoľkými bazénmi, šmykľavkami, toboganmi a ďalšími zábavnými atrakciami. Vďaka svojim špičkovým službám je hotel fantastickou voľbou pre nezabudnuteľnú dovolenku.</p> <ul><li>pláže: pri pláži</li><li>letiska: 39 km</li><li>centra: 23 km </li><li>nákupné možnosti: 23 km </li></ul><p><strong>Štandardná izba Deluxe, výhľad do záhrady</strong></p>\r\n<ul>\r\n<li>individuálne ovládateľná klimatizácia</li>\r\n<li>telefón</li>\r\n<li>TV so satelitným príjmom</li>\r\n<li>minibar (za poplatok)</li>\r\n<li>set na prípravu kávy a čaju</li>\r\n<li>vlastné sociálne zariadenie (kúpeľňa, sušič vlasov, WC)</li>\r\n<li>trezor</li>\r\n<li>balkón alebo terasa</li>\r\n</ul>\r\n<strong>Ubytovanie za príplatok</strong>\r\n<ul>\r\n<li>Rodinná izba, Výhľad bazén : 2 spálne oddelené prepážkou, v zadnej časti hotela.</li>\r\n<li>Izba Deluxe bližšie k moru</li>\r\n<li>Izba Deluxe s bočným výhľadom na more</li>\r\n<li>izba Deluxe s výhľadom na bazén</li>\r\n</ul> <ul><li>vstupná hala s recepciou</li><li>hlavná reštaurácia</li><li>3 a la carte reštaurácie (orientálna - 1 x za pobyt večera zadarmo, nutná rezervácia, La Vista za poplatok, nutná rezervácia, Aqua Med v hoteli LTI Akassia, za poplatok, nutná rezervácia)</li><li>lobby bar</li><li>bar pri bazéne</li><li>Wi-Fi (zadarmo)</li><li>obchodná  galéria</li><li>práčovňa</li><li>diskotéka</li><li>niekoľko bazénov</li><li>plavecký bazén olympijskej veľkosti</li><li>vyhrievaný bazén v zimnom období (ležadlá, slnečníky a plážové osušky zadarmo)</li><li>detský bazén</li><li>aquapark s množstvom atrakcií</li><li>detské ihrisko</li><li>mini klub</li></ul> <ul><li>piesočnatá</li><li>vstup do mora cez 2 móla alebo cez lagúnu</li><li>ležadlá, slnečníky a plážové osušky (zadarmo)</li><li>plážový bar</li><li>plážová reštaurácia</li></ul> <ul><li>animačné programy</li><li>večerné programy</li><li>fitness</li><li>2 tenisové kurty (osvetlenie za poplatok, vybavenie na 1 hod. za pobyt zadarmo)</li><li>stolný tenis</li><li>boccia</li><li>biliard (1 hod. za pobyt zadarmo)</li><li>vodné pólo</li><li>plážový volejbal</li><li>futbalové ihrisko</li><li>šípky</li></ul> <ul><li>wellness</li><li>sauna</li><li>masáže</li><li>salón krásy</li><li>potápačské centrum</li></ul><ul>\r\n<li>All inclusive: raňajky, obedy a večere formou bufetu s obsluhou, počas dňa ľahké občerstvenie, neobmedzené množstvo nealkoholických a miestnych alkoholických nápojov. Možnosť čerpania na miestach a v časoch určených hotelom.</li>\r\n<li>Ultra All Inclusive (za poplatok)</li>\r\n</ul>5 *",
+  "distinctRoomTypes": [
+    "2+0 Full Board Premium, Výhľad na bazén",
+    "2+0 Dvojlôžková izba, Deluxe, Beach Front",
+    "2+0 Dvojlôžková izba, Deluxe, Výhľad do záhrady",
+    "2+0 Dvojlôžková izba, Deluxe, Výhľad na bazén",
+    "2+0 Dvojlôžková izba, Deluxe, Bočný výhľad na more"
+  ],
+  "distinctCatering": ["All Inclusive", "All Inclusive Ultra"],
+  "differences": {
+    "2+0 Full Board Premium, Výhľad na bazén-All Inclusive": "306.00",
+    "2+0 Full Board Premium, Výhľad na bazén-All Inclusive Ultra": "462.00",
+    "2+0 Dvojlôžková izba, Deluxe, Beach Front-All Inclusive": "152.00",
+    "2+0 Dvojlôžková izba, Deluxe, Beach Front-All Inclusive Ultra": "308.00",
+    "2+0 Dvojlôžková izba, Deluxe, Výhľad do záhrady-All Inclusive": "0.00",
+    "2+0 Dvojlôžková izba, Deluxe, Výhľad do záhrady-All Inclusive Ultra": "156.00",
+    "2+0 Dvojlôžková izba, Deluxe, Výhľad na bazén-All Inclusive": "76.00",
+    "2+0 Dvojlôžková izba, Deluxe, Výhľad na bazén-All Inclusive Ultra": "232.00",
+    "2+0 Dvojlôžková izba, Deluxe, Bočný výhľad na more-All Inclusive": "110.00",
+    "2+0 Dvojlôžková izba, Deluxe, Bočný výhľad na more-All Inclusive Ultra": "266.00"
+  },
+  "products": [
+    {
+      "catering": "All Inclusive",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Full Board Premium, Výhľad na bazén",
+      "priceFrom": "2158464",
+      "discountedPriceFrom": "2158",
+      "id": "118475285",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0ZSMDEgQUkgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "2158",
+          "price": "2158",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 464
+    },
+    {
+      "catering": "All Inclusive Ultra",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Full Board Premium, Výhľad na bazén",
+      "priceFrom": "2314464",
+      "discountedPriceFrom": "2314",
+      "id": "118475286",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0ZSMDEgQVUgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "2314",
+          "price": "2314",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 464
+    },
+    {
+      "catering": "All Inclusive",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Dvojlôžková izba, Deluxe, Beach Front",
+      "priceFrom": "2004464",
+      "discountedPriceFrom": "2004",
+      "id": "118475287",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0RSMDggQUkgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "2004",
+          "price": "2004",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 464
+    },
+    {
+      "catering": "All Inclusive Ultra",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Dvojlôžková izba, Deluxe, Beach Front",
+      "priceFrom": "2160464",
+      "discountedPriceFrom": "2160",
+      "id": "118475288",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0RSMDggQVUgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "2160",
+          "price": "2160",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 464
+    },
+    {
+      "catering": "All Inclusive",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Dvojlôžková izba, Deluxe, Výhľad do záhrady",
+      "priceFrom": "1852462",
+      "discountedPriceFrom": "1852",
+      "id": "118475289",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0RSMDUgQUkgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "1852",
+          "price": "1852",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 462
+    },
+    {
+      "catering": "All Inclusive Ultra",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Dvojlôžková izba, Deluxe, Výhľad do záhrady",
+      "priceFrom": "2008462",
+      "discountedPriceFrom": "2008",
+      "id": "118475290",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0RSMDUgQVUgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "2008",
+          "price": "2008",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 462
+    },
+    {
+      "catering": "All Inclusive",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Dvojlôžková izba, Deluxe, Výhľad na bazén",
+      "priceFrom": "1928470",
+      "discountedPriceFrom": "1928",
+      "id": "118475291",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0RSMDYgQUkgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "1928",
+          "price": "1928",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 470
+    },
+    {
+      "catering": "All Inclusive Ultra",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Dvojlôžková izba, Deluxe, Výhľad na bazén",
+      "priceFrom": "2084470",
+      "discountedPriceFrom": "2084",
+      "id": "118475292",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0RSMDYgQVUgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "2084",
+          "price": "2084",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 470
+    },
+    {
+      "catering": "All Inclusive",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Dvojlôžková izba, Deluxe, Bočný výhľad na more",
+      "priceFrom": "1962464",
+      "discountedPriceFrom": "1962",
+      "id": "118475293",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0RSMDcgQUkgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "1962",
+          "price": "1962",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 464
+    },
+    {
+      "catering": "All Inclusive Ultra",
+      "endDate": "2024-09-01",
+      "startDate": "2024-08-25",
+      "transport": {
+        "type": "plane",
+        "departureLocation": "bratislava"
+      },
+      "roomType": "2+0 Dvojlôžková izba, Deluxe, Bočný výhľad na more",
+      "priceFrom": "2118464",
+      "discountedPriceFrom": "2118",
+      "id": "118475294",
+      "externalProductId": "STJLU1BSTUZSTUYyMDAwNzI0MDgyNTI0MDgyNTAwN0RSMDcgQVUgKzArMFJNRkJUUzcxIEJUU1JNRkJUUzcxIFJNRkJUUzI0MDkwMQ==",
+      "children": 0,
+      "adults": 2,
+      "thumbnail": "",
+      "addons": [
+        {
+          "id": "per-adult",
+          "name": "Cena za dospelého",
+          "discountedPrice": "2118",
+          "price": "2118",
+          "type": "base",
+          "ageFrom": 18,
+          "ageTo": 0,
+          "priority": "1",
+          "count": 2
+        }
+      ],
+      "lastMinute": false,
+      "totalDiscount": 464
+    }
+  ]
+}
