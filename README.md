@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Demo site
 
-https://holidayo-test-n4vt8hu6v-chidojiros-projects.vercel.app/
+https://holidayo-test-git-main-chidojiros-projects.vercel.app/
 
 ## Getting Started
 
