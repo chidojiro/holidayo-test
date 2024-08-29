@@ -10,6 +10,7 @@
     "icons": "node ./src/components/icons/generate-icons.cjs"
   },
   "dependencies": {
+    "@cyntler/react-doc-viewer": "^1.17.0",
     "@svgr/webpack": "^8.1.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.12",
